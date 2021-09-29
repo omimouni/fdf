@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/28 18:27:02 by omimouni          #+#    #+#             */
-/*   Updated: 2021/09/29 23:33:54 by omimouni         ###   ########.fr       */
+/*   Created: 2021/09/29 23:21:56 by omimouni          #+#    #+#             */
+/*   Updated: 2021/09/29 23:28:51 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "libft.h"
 
 int
-	main(int argc, char **argv)
+	ft_strlen(char *s)
 {
-	t_fdf	*fdf;
-	char	*line;
-	int		fd;
+	int	i;
 
-	fd = open("file", O_RDWR);
-	line = ft_gnl(fd);
-	line = ft_gnl(fd);
-	line = ft_gnl(fd);
-	return (0);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

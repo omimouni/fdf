@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/28 18:27:02 by omimouni          #+#    #+#             */
-/*   Updated: 2021/09/29 23:33:54 by omimouni         ###   ########.fr       */
+/*   Created: 2021/09/29 23:14:17 by omimouni          #+#    #+#             */
+/*   Updated: 2021/09/29 23:28:37 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "libft.h"
 
-int
-	main(int argc, char **argv)
+char
+	*ft_strjoin(char *s1, char *s2)
 {
-	t_fdf	*fdf;
-	char	*line;
-	int		fd;
-
-	fd = open("file", O_RDWR);
-	line = ft_gnl(fd);
-	line = ft_gnl(fd);
-	line = ft_gnl(fd);
-	return (0);
+	int		p;
+	int		q;
+	int		i;
+	char	*tmp;
+	
+	if (!s1 || !s2)
+		return (NULL);
+	p = ft_strlen(s1);
+	q = ft_strlen(s2);
+	tmp = malloc(sizeof(char) * (p + q + 1));
+	i = 0;
+	while (*s1)
+		tmp[i++] = *(s1++);
+	while (*s2)
+		tmp[i++] = *(s2++);
+	tmp[i] = '\0';
+	return (tmp);
 }

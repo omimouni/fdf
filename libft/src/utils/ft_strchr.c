@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/28 18:27:02 by omimouni          #+#    #+#             */
-/*   Updated: 2021/09/29 23:33:54 by omimouni         ###   ########.fr       */
+/*   Created: 2021/09/29 23:04:09 by omimouni          #+#    #+#             */
+/*   Updated: 2021/09/29 23:05:32 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "libft.h"
 
-int
-	main(int argc, char **argv)
+char
+	*ft_strchr(char *s, char c)
 {
-	t_fdf	*fdf;
-	char	*line;
-	int		fd;
-
-	fd = open("file", O_RDWR);
-	line = ft_gnl(fd);
-	line = ft_gnl(fd);
-	line = ft_gnl(fd);
-	return (0);
+	while (*s)
+	{
+		if (*s == c)
+			return (s);
+		s++;
+	}
+	return (NULL);
 }

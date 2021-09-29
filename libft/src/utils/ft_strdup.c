@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdf.c                                              :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/28 18:27:02 by omimouni          #+#    #+#             */
-/*   Updated: 2021/09/29 23:33:54 by omimouni         ###   ########.fr       */
+/*   Created: 2021/09/29 23:07:22 by omimouni          #+#    #+#             */
+/*   Updated: 2021/09/29 23:10:42 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "libft.h"
 
-int
-	main(int argc, char **argv)
+char
+	*ft_strdup(char *s)
 {
-	t_fdf	*fdf;
-	char	*line;
-	int		fd;
+	int	i;
+	int	length;
+	char	*tmp;
 
-	fd = open("file", O_RDWR);
-	line = ft_gnl(fd);
-	line = ft_gnl(fd);
-	line = ft_gnl(fd);
-	return (0);
+	length = 0;
+	while (s[length])
+		length++;
+	tmp = malloc(sizeof(char) * (length + 1));
+	i = 0;
+	while (s[i])
+	{
+		tmp[i] = s[i];
+		i++;
+	}
+	tmp[i] = '\0';
+	return (tmp);
 }
