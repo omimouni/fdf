@@ -6,7 +6,7 @@
 #    By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 18:27:52 by omimouni          #+#    #+#              #
-#    Updated: 2021/09/29 18:54:58 by omimouni         ###   ########.fr        #
+#    Updated: 2021/09/30 00:03:30 by omimouni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ endif
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-	gcc $(OBJS) $(LIBFT) $(LIB_FLAGS) -fsanitize=address -o $(NAME)
+	gcc $(OBJS) $(LIBFT) $(LIB_FLAGS) -fsanitize=address -g -o $(NAME)
 
 clean: 
 	rm -rf $(OBJS)
@@ -47,4 +47,4 @@ $(LIBFT):
 	
 build/%.o: src/%.c
 	mkdir -p $(dir $@)
-	gcc $< -I./include  -c -o $@
+	gcc $< -I./include -c -o $@

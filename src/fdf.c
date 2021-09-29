@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:02 by omimouni          #+#    #+#             */
-/*   Updated: 2021/09/29 23:33:54 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/09/30 00:09:26 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,15 @@ int
 
 	fd = open("file", O_RDWR);
 	line = ft_gnl(fd);
+	free(line);
 	line = ft_gnl(fd);
+	free(line);
 	line = ft_gnl(fd);
+	free(line);
+	line = ft_gnl(fd);
+	free(line);
+	line = ft_gnl(fd);
+	free(line);
+
 	return (0);
 }
