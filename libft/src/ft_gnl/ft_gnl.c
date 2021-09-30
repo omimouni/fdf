@@ -6,12 +6,11 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 18:08:44 by omimouni          #+#    #+#             */
-/*   Updated: 2021/09/30 00:08:39 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/09/30 21:57:24 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#define BUFFER_SIZE 1
 
 char
 	*ft_gnl(int fd)
@@ -24,9 +23,6 @@ char
 
 	if (fd < 0)
 		return (NULL);	
-
-	// Read until reaching \n
-	
 	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	while (1)
 	{
@@ -46,18 +42,14 @@ char
 				break ;
 		}
 		else
-		{
 			break ;
-		}
 	}
 	free(buff);
 
 
 	// Return error
-	if (ptr == NULL && read_n == 0)
-	{
+	if (ptr == NULL)
 		return (NULL);
-	}
 	// Get next line
 	char	*line;
 	int		len;
@@ -91,8 +83,5 @@ char
 		free(ptr);
 		ptr = NULL;
 	}
-
-	printf("-> %s \n", line);
-
 	return (line);
 }

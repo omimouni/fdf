@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/29 23:04:09 by omimouni          #+#    #+#             */
-/*   Updated: 2021/09/30 21:49:27 by omimouni         ###   ########.fr       */
+/*   Created: 2021/09/30 22:07:48 by omimouni          #+#    #+#             */
+/*   Updated: 2021/09/30 22:20:46 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fdf.h"
 
-char
-	*ft_strchr(char *s, char c)
+void
+	f_parser(t_fdf *fdf, char *map_file)
 {
-	while (*s)
-	{
-		if (*s == c)
-			return (s);
-		s++;
-	}
-	return (NULL);
+	int	fd;
+
+	fd = open("test_maps/42.fdf", O_RDONLY);
 }

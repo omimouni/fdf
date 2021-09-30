@@ -6,13 +6,18 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/09/29 18:41:34 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/09/30 23:07:18 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
+# define F_WINDOW_HEIGHT 800
+# define F_WINDOW_WIDTH 800
+# define F_WINDOW_TITLE "FdF"
+
+# include <math.h>
 # include <mlx.h>
 # include <stdio.h>
 # include <sys/types.h>
@@ -24,7 +29,15 @@ typedef struct s_fdf
 {
 	void	*mlx;
 	void	*win;
-	
+	void	*img;
+	int		bpp;
+	int		line_size;
+	int		endian;
+	char	*addr;
 }	t_fdf;
+
+
+void
+	f_put_pixel(int x, int y, int color, t_fdf *fdf);
 
 #endif

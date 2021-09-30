@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 23:07:22 by omimouni          #+#    #+#             */
-/*   Updated: 2021/09/29 23:10:42 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/09/30 21:49:10 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char
 	*ft_strdup(char *s)
 {
-	int	i;
-	int	length;
+	int		i;
+	int		length;
 	char	*tmp;
 
 	length = 0;
