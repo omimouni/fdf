@@ -6,7 +6,7 @@
 #    By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 18:27:52 by omimouni          #+#    #+#              #
-#    Updated: 2021/09/30 00:03:30 by omimouni         ###   ########.fr        #
+#    Updated: 2021/10/01 11:02:10 by omimouni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,10 @@ LIBFT = libft/libft.a
 # MLX flags based on OS
 OS := $(shell uname)
 ifeq ($(OS),Linux)
-LIB_FLAGS = -lmlx -lX11 -lXext 
+LIB_FLAGS =  -lm -lmlx -lX11 -lXext 
 endif
 ifeq ($(OS),Darwin)
-LIB_FLAGS = -lmlx -framework OpenGL -framework AppKit
+LIB_FLAGS = -lm -lmlx -framework OpenGL -framework AppKit
 endif
 
 all: $(NAME)

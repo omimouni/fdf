@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 08:41:43 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/01 09:14:02 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/01 10:09:41 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static	int		ft_word(char *str, int i, int *nbword, int c)
 	return (i);
 }
 
-static	void	ft_free(char **tab, int n)
+void	ft_split_free(char **tab, int n)
 {
 	int	i;
 
@@ -44,7 +44,7 @@ static	int		ft_add_word(char **tab, char *str, int *nbword, int c)
 		wlen++;
 	if (!(tmp = (char *)malloc((wlen + 1) * sizeof(char))))
 	{
-		ft_free(tab, *nbword);
+		ft_split_free(tab, *nbword);
 		*nbword = 0;
 		return (ft_strlen(str));
 	}

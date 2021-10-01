@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 08:13:44 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/01 08:48:41 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/01 11:46:54 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 void
 	f_mlx_init(t_fdf *fdf)
 {
+	fdf->win_w = 1000;
+	fdf->win_h = 1000;
 	fdf->mlx = mlx_init();
-	fdf->win = mlx_new_window(fdf->mlx, F_WINDOW_WIDTH,
-			F_WINDOW_HEIGHT, F_WINDOW_TITLE);
-	fdf->img = mlx_new_image(fdf->mlx, F_WINDOW_WIDTH, F_WINDOW_HEIGHT);
+	fdf->win = mlx_new_window(fdf->mlx, fdf->win_w,
+			fdf->win_h, F_WINDOW_TITLE);
+	fdf->img = mlx_new_image(fdf->mlx, fdf->win_w, fdf->win_h);
 	fdf->addr = mlx_get_data_addr(fdf->img, &fdf->bpp,
 			&fdf->line_size, &fdf->endian);
 }
@@ -39,12 +41,12 @@ void
 	int	j;
 
 	i = 0;
-	while (i < F_WINDOW_WIDTH)
+	while (i < fdf->win_w)
 	{
 		j = 0;
-		while (j < F_WINDOW_HEIGHT)
+		while (j < fdf->win_h)
 		{
-			f_put_pixel(i, j, 0xffffff, fdf);
+			f_put_pixel(i, j, 0x0, fdf);
 			j++;
 		}
 		i++;
