@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/01 12:06:13 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/01 20:45:31 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,16 @@ typedef struct s_fdf
 /**
  * MLX utilities
 */
+void	f_mlx_init(t_fdf *fdf);
+void	f_put_pixel(int x, int y, int color, t_fdf *fdf);
+void	f_image_clear(t_fdf *fdf);
+
+/**
+ * Parser
+ */
+void	f_parse_dimension(t_fdf *fdf, char *file);
+
 void
-	f_mlx_init(t_fdf *fdf);
-void
-	f_put_pixel(int x, int y, int color, t_fdf *fdf);
-void
-	f_image_clear(t_fdf *fdf);
+	f_draw_line(int x0, int y0, int x1, int y1, t_fdf *fdf);
 
 #endif
