@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:02 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/01 20:56:27 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/02 00:32:30 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int
 	f_mlx_init(fdf);
 	f_image_clear(fdf);
 
-	f_draw_line(10, 0, 10, 20, fdf);
+	// f_draw_line(10, 10, 100, 40, fdf);
 
 	// Draw points
 	int	x;
@@ -39,13 +39,12 @@ int
 	{
 		j = 0;
 		y = 0;
-		xn = x;
 		while (j < fdf->map_h)
 		{
 			j++;
-			yn = y;
+			f_draw_line(x + 10, y, x, y, fdf);
+			f_draw_line(x, y, x, y + 10, fdf);
 			y+=10;
-			// f_draw_line(xn, yn, x, y, fdf);
 		}
 		x += 10;
 		i++;
