@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/01 08:18:14 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/01 08:38:22 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,20 @@ typedef struct s_fdf
 	char	*addr;
 }	t_fdf;
 
+/**
+ * MLX utilities
+*/
 void
 	f_mlx_init(t_fdf *fdf);
 void
 	f_put_pixel(int x, int y, int color, t_fdf *fdf);
 void
 	f_image_clear(t_fdf *fdf);
+
+/**
+ * 
+ */
+void
+	f_parser(t_fdf *fdf, char *map_file);
+
 #endif

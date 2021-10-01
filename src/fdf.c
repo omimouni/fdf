@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:02 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/01 08:20:30 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/01 08:43:16 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ int
 	char	*dest;
 
 	fdf = malloc(sizeof(t_fdf));
-	f_mlx_init(fdf);
-	f_image_clear(fdf);
-	mlx_loop(fdf->mlx);
+	// f_mlx_init(fdf);
+	// f_image_clear(fdf);
+	f_parser(fdf, "");
+	// mlx_loop(fdf->mlx);
 	return (0);
 }
