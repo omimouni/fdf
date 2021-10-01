@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 08:13:44 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/01 11:46:54 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/01 13:00:00 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,4 @@ void
 		}
 		i++;
 	}
-	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img, 0, 0);
 }

@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/01 11:26:00 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/01 12:06:13 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,6 @@
 # include <stdlib.h>
 # include "libft.h"
 
-typedef struct s_map_p
-{
-	int		x;
-	int		y;
-	int		weight;
-}	t_map_p;
-
 typedef struct s_fdf
 {
 	void	*mlx;
@@ -43,7 +36,6 @@ typedef struct s_fdf
 	char	*addr;
 	int		map_h;
 	int		map_w;
-	t_map_p	**map_p;
 }	t_fdf;
 
 /**
@@ -55,11 +47,5 @@ void
 	f_put_pixel(int x, int y, int color, t_fdf *fdf);
 void
 	f_image_clear(t_fdf *fdf);
-
-/**
- * 
- */
-void
-	f_parser(t_fdf *fdf, char *map_file);
 
 #endif

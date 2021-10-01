@@ -6,7 +6,7 @@
 #    By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 18:27:52 by omimouni          #+#    #+#              #
-#    Updated: 2021/10/01 11:02:10 by omimouni         ###   ########.fr        #
+#    Updated: 2021/10/01 12:21:59 by omimouni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ endif
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-	gcc $(OBJS) $(LIBFT) $(LIB_FLAGS) -fsanitize=address -g -o $(NAME)
+	gcc $(OBJS) $(LIBFT) $(LIB_FLAGS) -o $(NAME)
 
 clean: 
 	rm -rf $(OBJS)
