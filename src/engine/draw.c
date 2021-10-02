@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:22:46 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/02 11:23:48 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/02 14:48:38 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,19 +86,7 @@ static void
 
 void
 	f_draw_line(int x0, int y0, int x1, int y1, int z, t_fdf *fdf)
-{
-	int sx;
-	int	sy;
-
-	sx = (x0 - y0) * cos(0.523599);
-	sy = -z + (x0 + y0) * sin(0.523599);
-	x0 = sx;
-	y0 = sy;
-	sx = (x1 - y1) * cos(0.523599);
-	sy = -z + (x1 + y1) * sin(0.523599);
-	x1 = sx;
-	y1 = sy;
-	
+{	
 	// TODO: Check out of bound
 	if (abs(y1 - y0) < abs(x1 - x0))
 	{
@@ -114,4 +102,11 @@ void
 		else
 			f_draw_line_high(x0, y0, x1, y1, fdf);
 	}
+}
+
+void
+	f_iso_project(t_point p, int *x, int *y)
+{
+	*x = (p.x - p.y) * cos(0.523599);
+	*y = -p.z + (p.x + p.y) * sin(0.523599);
 }

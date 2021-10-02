@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 08:13:44 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/01 20:43:53 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/02 14:52:41 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void
 	f_mlx_init(t_fdf *fdf)
 {
-	fdf->win_w = 500;
-	fdf->win_h = 500;
+	fdf->win_w = 1000;
+	fdf->win_h = 1000;
 	fdf->mlx = mlx_init();
 	fdf->win = mlx_new_window(fdf->mlx, fdf->win_w,
 			fdf->win_h, F_WINDOW_TITLE);
