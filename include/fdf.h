@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/02 18:40:14 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/02 20:02:08 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,11 @@ typedef struct s_fdf
 	int		zoom_scale;
 	int		offset_x;
 	int		offset_y;
+
+	int		line_x;
+	int		line_y;
+	int		line_x_next;
+	int		line_y_next;
 }	t_fdf;
 
 /**
@@ -66,5 +71,8 @@ void	init(t_fdf *fdf, char *file);
 /**
  * Render
  */
+
+void	f_draw_line(int x0, int y0, int x1, int y1, int z, t_fdf *fdf);
+void	f_render(t_fdf *fdf);
 
 #endif

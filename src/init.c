@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 18:38:58 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/02 19:21:55 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/02 23:49:52 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,20 +95,5 @@ void
 	fdf->map_h = calc_height(file);
 	fdf->map_w = calc_width(file);
 	parse_map(fdf, file);
-	printf("%d %d\n", fdf->map_h, fdf->map_w);
-
-	int	i;
-	int	j;
-	i = 0;
-	while (i < fdf->map_h)
-	{
-		j = 0;
-		while (j < fdf->map_w)
-		{
-			printf("%d ", fdf->map_z[i][j]);
-			j++;
-		}
-		printf("\n");
-		i++;
-	}
+	printf("%d %d\n", fdf->map_w, fdf->map_h);
 }

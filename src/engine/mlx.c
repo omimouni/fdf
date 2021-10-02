@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 08:13:44 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/02 14:52:41 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 00:26:27 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ void
 	char	*dest;
 
 	dest = fdf->addr + (y * fdf->line_size + x * (fdf->bpp / 8));
-	*(unsigned int *)dest = color;
+	if ((x >= 0 && x <= fdf->win_w) && (y >= 0 && y <= fdf->win_h))
+		*(unsigned int *)dest = color;
 }
 
 void
