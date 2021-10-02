@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:02 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/02 00:32:30 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/02 11:24:38 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,11 @@ int
 		while (j < fdf->map_h)
 		{
 			j++;
-			f_draw_line(x + 10, y, x, y, fdf);
-			f_draw_line(x, y, x, y + 10, fdf);
+			if (x == 20)
+				f_draw_line(x + 10, y, x, y, 1, fdf);
+			else
+				f_draw_line(x + 10, y, x, y, 0, fdf);
+			f_draw_line(x, y, x, y + 10, 0, fdf);
 			y+=10;
 		}
 		x += 10;
