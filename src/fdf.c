@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:02 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/02 14:45:44 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/02 16:27:11 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int
 	fdf = malloc(sizeof(t_fdf));
 	f_parse_dimension(fdf, argv[1]);
 	fdf->zoom_scale = 50;
-	fdf->offset_x = 300;
-	fdf->offset_y = 300;
+	fdf->offset_x = 400;
+	fdf->offset_y = 400;
 	f_mlx_init(fdf);
 	f_image_clear(fdf);
 	f_render(fdf);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dimension.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 20:23:32 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/01 20:26:37 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/02 17:01:53 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,21 @@ void
 	int		i;
 	char	*line;
 	char	**tab;
-
+	int		re;
 	fdf->map_h = 0;
 	fd = open(file, O_RDONLY);
 	while (1)
 	{
-		line = ft_gnl(fd);
-		if (!line)
+		re = ft_gnl(fd, &line);
+		fdf->map_h++;
+		free(line);
+		if (re == 0)
 			break ;
-		else
-		{
-			fdf->map_h++;
-			free(line);
-		}
 	}
 	close(fd);
 	fdf->map_w = 0;
 	fd = open(file, O_RDONLY);
-	line = ft_gnl(fd);
+	ft_gnl(fd, &line);
 	tab = ft_split(line, ' ');
 	i = 0;
 	while (tab[i++])

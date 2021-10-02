@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 18:08:30 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/01 10:09:55 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/02 16:18:37 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-char
-	*ft_gnl(int fd);
+int	
+	ft_gnl(int fd, char **line);
+
 char
 	*ft_strchr(char *s, char c);
 char
@@ -33,4 +34,6 @@ char
 	**ft_split(char *str, char c);
 void
 	ft_split_free(char **tab, int n);
+
+char	*ft_substr(char *s, unsigned int start, size_t len);
 #endif
