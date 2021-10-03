@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 08:52:28 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 20:07:15 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 20:14:52 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,24 +49,27 @@ void
 int
 	f_key_hook(int key, t_fdf *fdf)
 {
-	f_scale_key(key, fdf);
-	if (key == F_KEY_UP)
-		fdf->offset_y += 10 * fdf->zoom_scale;
-	if (key == F_KEY_DOWN)
-		fdf->offset_y -= 10 * fdf->zoom_scale;
-	if (key == F_KEY_LEFT)
-		fdf->offset_x += 10 * fdf->zoom_scale;
-	if (key == F_KEY_RIGHT)
-		fdf->offset_x -= 10 * fdf->zoom_scale;
-	if (key == F_KEY_ESC)
-		f_exit(fdf);
-	if (key == F_KEY_C)
+	if (IS_BONUS)
 	{
-		if (fdf->camera == ISO)
-			fdf->camera = PARALLEL;
-		else
-			fdf->camera = ISO;
+		f_scale_key(key, fdf);
+		if (key == F_KEY_UP)
+			fdf->offset_y += 10 * fdf->zoom_scale;
+		if (key == F_KEY_DOWN)
+			fdf->offset_y -= 10 * fdf->zoom_scale;
+		if (key == F_KEY_LEFT)
+			fdf->offset_x += 10 * fdf->zoom_scale;
+		if (key == F_KEY_RIGHT)
+			fdf->offset_x -= 10 * fdf->zoom_scale;
+		if (key == F_KEY_ESC)
+			f_exit(fdf);
+		if (key == F_KEY_C)
+		{
+			if (fdf->camera == ISO)
+				fdf->camera = PARALLEL;
+			else
+				fdf->camera = ISO;
+		}
+		f_render_new_frame(fdf);
 	}
-	f_render_new_frame(fdf);
 	return (0);
 }
