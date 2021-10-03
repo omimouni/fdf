@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 13:59:44 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 14:06:36 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 17:49:40 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,13 @@ int
 		n = s[i - 1];
 		if (n >= 'A' && n <= 'F')
 			nchar = 'A' - 10;
+		if (n >= 'a' && n <= 'f')
+			nchar = 'a' - 10;
 		hex += (int)powf(16, 6 - i) * (n - nchar);
 		i--;
 	}
+	printf(" || %x\n", hex);
+
 	return (hex);
 }
 
@@ -44,10 +48,15 @@ void
 	i = 0;
 	while (d[i])
 		i++;
+	// printf("M HERE %d\n", i);
+
 	fdf->map_z[y][x] = atoi(d[0]);
 	fdf->map_color[y][x] = -1;
 	if (i == 2)
-		fdf->map_color[y][x] = parse_hex("FF1099");
+	{
+		printf("%s\n", d[1]);
+		fdf->map_color[y][x] = parse_hex(d[1] + 2);
+	}
 	ft_split_free(d, i);
 }
 

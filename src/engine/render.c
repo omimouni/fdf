@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 19:24:15 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 13:20:42 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 17:19:03 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void
 	p[3] = fdf->line_y_next + fdf->offset_y;
 	p[4] = fdf->map_z[y][x];
 	p[5] = fdf->map_z[y][x + 1];
+	p[6] = fdf->map_color[y][x];
+	p[7] = fdf->map_color[y][x + 1];
 	f_draw_line(p, fdf);
 }
 
@@ -63,6 +65,8 @@ void
 	p[3] = fdf->line_y_next + fdf->offset_y;
 	p[4] = fdf->map_z[y][x];
 	p[5] = fdf->map_z[y + 1][x];
+	p[6] = fdf->map_color[y][x];
+	p[7] = fdf->map_color[y + 1][x];
 	f_draw_line(p, fdf);
 }
 

@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:02 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 13:51:43 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 17:54:55 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 static void
 	f_responsive(t_fdf *fdf)
 {
-	fdf->zoom_scale = 3;
-	fdf->offset_x = 400;
-	fdf->offset_y = 400;
-	fdf->z_height = 2;
+	fdf->zoom_scale = 10;
+	fdf->offset_x = 00;
+	fdf->offset_y = 00;
+	fdf->z_height = 1;
 }
 
 static void
