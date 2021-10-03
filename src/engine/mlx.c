@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mlx.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 08:13:44 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 00:41:08 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 08:31:15 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void
 	char	*dest;
 
 	dest = fdf->addr + (y * fdf->line_size + x * (fdf->bpp / 8));
-	if ((x >= 0 && x <= fdf->win_w) && (y >= 0 && y <= fdf->win_h))
+	if ((x >= 0 && x < fdf->win_w) && (y >= 0 && y < fdf->win_h))
 		*(unsigned int *)dest = color;
 }
 

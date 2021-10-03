@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:02 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 00:36:52 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 08:30:49 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ int
 	fdf = malloc(sizeof(t_fdf));
 	init(fdf, argv[1]);
 	f_mlx_init(fdf);
-	fdf->zoom_scale = 20;
+	fdf->zoom_scale = 1;
 	fdf->offset_x = 400;
 	fdf->offset_y = 400;
+	fdf->z_height = 3;
 	f_image_clear(fdf);
 	f_render(fdf);
 	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img, 0, 0);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/02 20:02:08 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 08:27:13 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ typedef struct s_fdf
 	int		line_y;
 	int		line_x_next;
 	int		line_y_next;
+
+	int		z_height;
 }	t_fdf;
 
 /**
