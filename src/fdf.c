@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:02 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 08:56:20 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 12:25:32 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include <math.h>
-
 
 static void
 	f_responsive(t_fdf *fdf)
@@ -21,7 +19,6 @@ static void
 	fdf->offset_x = 400;
 	fdf->offset_y = 400;
 	fdf->z_height = 3;
-
 }
 
 static void
@@ -42,8 +39,7 @@ static void
 			j++;
 		}
 		i++;
-	}
-	
+	}	
 }
 
 int

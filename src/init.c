@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 18:38:58 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 08:22:59 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 12:26:26 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static int
 	while (s[++i])
 		;
 	ft_split_free(s, i);
-	// close(fd);
 	return (i);
 }
 
@@ -82,13 +81,12 @@ static void
 		ft_split_free(s, fdf->map_w);
 		y++;
 	}
-	// close(fd);
 }
 
 void
 	init(t_fdf *fdf, char *file)
 {
-	int	fd1; 
+	int	fd1;
 	int	fd2;
 	int	fd3;
 
@@ -98,5 +96,4 @@ void
 	close(fd1);
 	close(fd2);
 	close(fd3);
-	printf("%d %d\n", fdf->map_w, fdf->map_h);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 19:24:15 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 08:28:51 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 12:18:53 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,27 +39,31 @@ void
 void
 	put_line_x(int x, int y, t_fdf *fdf)
 {
+	int	p[8];
+
 	f_prj_iso_x(x, y, fdf);
-	f_draw_line(
-		fdf->line_x + fdf->offset_x,
-		fdf->line_y + fdf->offset_y,
-		fdf->line_x_next + fdf->offset_x,
-		fdf->line_y_next + fdf->offset_y,
-		0,
-		fdf);
+	p[0] = fdf->line_x + fdf->offset_x;
+	p[1] = fdf->line_y + fdf->offset_y;
+	p[2] = fdf->line_x_next + fdf->offset_x;
+	p[3] = fdf->line_y_next + fdf->offset_y;
+	p[4] = fdf->map_z[y][x];
+	p[5] = fdf->map_z[y][x + 1];
+	f_draw_line(p, fdf);
 }
 
 void
 	put_line_y(int x, int y, t_fdf *fdf)
 {
+	int	p[8];
+
 	f_prj_iso_y(x, y, fdf);
-	f_draw_line(
-		fdf->line_x + fdf->offset_x,
-		fdf->line_y + fdf->offset_y,
-		fdf->line_x_next + fdf->offset_x,
-		fdf->line_y_next + fdf->offset_y,
-		0,
-		fdf);
+	p[0] = fdf->line_x + fdf->offset_x;
+	p[1] = fdf->line_y + fdf->offset_y;
+	p[2] = fdf->line_x_next + fdf->offset_x;
+	p[3] = fdf->line_y_next + fdf->offset_y;
+	p[4] = fdf->map_z[y][x];
+	p[5] = fdf->map_z[y + 1][x];
+	f_draw_line(p, fdf);
 }
 
 void
