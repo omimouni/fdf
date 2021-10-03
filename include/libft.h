@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 18:08:30 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 12:38:41 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 18:46:09 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int		ft_strlen(char *s);
 char	**ft_split(char *str, char c);
 void	ft_split_free(char **tab, int n);
 char	*ft_substr(char *s, unsigned int start, size_t len);
-
+int		ft_atoi(const char *str);
 #endif

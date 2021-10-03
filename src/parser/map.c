@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 13:59:44 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 18:42:38 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 18:48:40 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void
 		i = 0;
 		while (d[i])
 			i++;
-		fdf->map_z[y][x] = atoi(d[0]);
+		fdf->map_z[y][x] = ft_atoi(d[0]);
 		fdf->map_color[y][x] = -1;
 		if (i == 2)
 		{
