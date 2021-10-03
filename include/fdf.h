@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 13:20:19 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 14:01:07 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@
 #  define F_KEY_W 13
 #  define F_KEY_S 1
 #  define F_KEY_ESC 65307
-#endif
+# endif
 
 typedef struct s_point
 {
@@ -74,7 +74,6 @@ typedef struct s_fdf
 	int		line_y_next;
 	double	r_deg;
 	int		z_height;
-
 	int		raw_x;
 	int		raw_y;
 }	t_fdf;
@@ -91,6 +90,9 @@ void	f_mlx_image(t_fdf *fdf);
  * Parser
  */
 void	init(t_fdf *fdf, char *file);
+int		parse_hex(char *s);
+void	parse_map_z(int x, int y, char *s, t_fdf *fdf)
+void	parse_map(t_fdf *fdf, char *file, int *fd);
 
 /**
  * Render
