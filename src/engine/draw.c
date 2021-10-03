@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:22:46 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/02 15:12:43 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 00:41:48 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,11 +102,4 @@ void
 		else
 			f_draw_line_high(x0, y0, x1, y1, fdf);
 	}
-}
-
-void
-	f_iso_project(t_point p, int *x, int *y)
-{
-	*x = (p.x - p.y) * cos(0.523599);
-	*y = -p.z + (p.x + p.y) * sin(0.523599);
 }

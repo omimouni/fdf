@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 08:13:44 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 00:26:27 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 00:41:08 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void
 		j = 0;
 		while (j < fdf->win_h)
 		{
-			f_put_pixel(i, j, 0x0, fdf);
+			f_put_pixel(i, j, 0x010101, fdf);
 			j++;
 		}
 		i++;
