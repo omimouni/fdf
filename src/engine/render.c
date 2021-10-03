@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 19:24:15 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 17:19:03 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 19:30:28 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,47 @@
 void
 	f_prj_iso_x(int x, int y, t_fdf *fdf)
 {
-	fdf->line_x = (x * fdf->zoom_scale - y * fdf->zoom_scale) * cos(0.523599);
-	fdf->line_y = -fdf->map_z[y][x] + (x * fdf->zoom_scale + y
-			* fdf->zoom_scale) * sin(0.523599);
-	fdf->line_x_next = ((x + 1) * fdf->zoom_scale - y
-			* fdf->zoom_scale) * cos(0.523599);
-	fdf->line_y_next = -fdf->map_z[y][x + 1] + ((x + 1)
-			* fdf->zoom_scale + y * fdf->zoom_scale) * sin(0.523599);
+	if (fdf->camera == ISO)
+	{
+		fdf->line_x = (x * fdf->zoom_scale - y
+				* fdf->zoom_scale) * cos(ISO_DEG);
+		fdf->line_y = -fdf->map_z[y][x] + (x * fdf->zoom_scale + y
+				* fdf->zoom_scale) * sin(ISO_DEG);
+		fdf->line_x_next = ((x + 1) * fdf->zoom_scale - y
+				* fdf->zoom_scale) * cos(ISO_DEG);
+		fdf->line_y_next = -fdf->map_z[y][x + 1] + ((x + 1)
+				* fdf->zoom_scale + y * fdf->zoom_scale) * sin(ISO_DEG);
+	}
+	else
+	{
+		fdf->line_x = x * fdf->zoom_scale;
+		fdf->line_y = y * fdf->zoom_scale + fdf->map_z[y][x];
+		fdf->line_x_next = (x + 1) * fdf->zoom_scale;
+		fdf->line_y_next = y * fdf->zoom_scale + fdf->map_z[y][x + 1];
+	}
 }
 
 void
 	f_prj_iso_y(int x, int y, t_fdf *fdf)
 {
-	fdf->line_x = (x * fdf->zoom_scale - y * fdf->zoom_scale) * cos(0.523599);
-	fdf->line_y = -fdf->map_z[y][x] + (x
-			* fdf->zoom_scale + y * fdf->zoom_scale) * sin(0.523599);
-	fdf->line_x_next = (x * fdf->zoom_scale
-			- (y + 1) * fdf->zoom_scale) * cos(0.523599);
-	fdf->line_y_next = -fdf->map_z[y + 1][x]
-		+ (x * fdf->zoom_scale + (y + 1) * fdf->zoom_scale) * sin(0.523599);
+	if (fdf->camera == ISO)
+	{
+		fdf->line_x = (x * fdf->zoom_scale - y
+				* fdf->zoom_scale) * cos(ISO_DEG);
+		fdf->line_y = -fdf->map_z[y][x] + (x
+				* fdf->zoom_scale + y * fdf->zoom_scale) * sin(ISO_DEG);
+		fdf->line_x_next = (x * fdf->zoom_scale
+				- (y + 1) * fdf->zoom_scale) * cos(ISO_DEG);
+		fdf->line_y_next = -fdf->map_z[y + 1][x]
+			+ (x * fdf->zoom_scale + (y + 1) * fdf->zoom_scale) * sin(ISO_DEG);
+	}
+	else
+	{
+		fdf->line_x = x * fdf->zoom_scale;
+		fdf->line_y = y * fdf->zoom_scale + fdf->map_z[y][x];
+		fdf->line_x_next = x * fdf->zoom_scale;
+		fdf->line_y_next = (y + 1) * fdf->zoom_scale + fdf->map_z[y + 1][x];
+	}
 }
 
 void

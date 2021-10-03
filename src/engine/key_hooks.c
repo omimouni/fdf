@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 08:52:28 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 18:09:59 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 19:28:05 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,13 @@ int
 		fdf->offset_x -= 10 * fdf->zoom_scale;
 	if (key == F_KEY_ESC)
 		f_exit(fdf);
+	if (key == F_KEY_C)
+	{
+		if (fdf->camera == ISO)
+			fdf->camera = PARALLEL;
+		else
+			fdf->camera = ISO;
+	}
 	f_render_new_frame(fdf);
 	return (0);
 }

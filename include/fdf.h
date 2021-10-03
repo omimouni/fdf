@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 14:02:29 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 19:29:41 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FDF_H
 
 # define F_WINDOW_TITLE "FdF"
+# define ISO_DEG 0.523599
 
 # include <math.h>
 # include <mlx.h>
@@ -31,6 +32,7 @@
 #  define F_KEY_W 119
 #  define F_KEY_S 115
 #  define F_KEY_ESC 65307
+#  define F_KEY_C 99
 # else
 #  define F_KEY_UP 126
 #  define F_KEY_DOWN 125
@@ -41,41 +43,35 @@
 #  define F_KEY_ESC 65307
 # endif
 
-typedef struct s_point
-{
-	int	x;
-	int	y;
-	int	z;
-	int	x_buff;
-	int	y_buff;
-}	t_point;
+enum			e_camera {ISO, PARALLEL};
 
 typedef struct s_fdf
 {
-	void	*mlx;
-	void	*win;
-	int		win_h;
-	int		win_w;
-	void	*img;
-	int		bpp;
-	int		line_size;
-	int		endian;
-	char	*addr;
-	int		map_h;
-	int		map_w;
-	int		**map_z;
-	int		**map_color;
-	int		zoom_scale;
-	int		offset_x;
-	int		offset_y;
-	int		line_x;
-	int		line_y;
-	int		line_x_next;
-	int		line_y_next;
-	double	r_deg;
-	int		z_height;
-	int		raw_x;
-	int		raw_y;
+	void			*mlx;
+	void			*win;
+	int				win_h;
+	int				win_w;
+	void			*img;
+	int				bpp;
+	int				line_size;
+	int				endian;
+	char			*addr;
+	int				map_h;
+	int				map_w;
+	int				**map_z;
+	int				**map_color;
+	int				zoom_scale;
+	int				offset_x;
+	int				offset_y;
+	int				line_x;
+	int				line_y;
+	int				line_x_next;
+	int				line_y_next;
+	double			r_deg;
+	int				z_height;
+	int				raw_x;
+	int				raw_y;
+	enum e_camera	camera;
 }	t_fdf;
 
 /**

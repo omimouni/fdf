@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:02 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 18:41:45 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 19:23:33 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int
 	{
 		fdf = malloc(sizeof(t_fdf));
 		init(fdf, argv[1]);
+		fdf->camera = ISO;
 		f_responsive(fdf);
 		f_z_factor(fdf);
 		f_mlx_init(fdf);
