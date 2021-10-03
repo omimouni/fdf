@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 19:53:12 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 20:18:59 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 20:47:35 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ void
 	}
 	fdf->offset_x = fdf->win_w / 4;
 	fdf->offset_y = fdf->win_h / 4;
-	fdf->z_height = 1;
+	fdf->z_height = 3;
 }
