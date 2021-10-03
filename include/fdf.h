@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 12:48:42 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 13:02:50 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,11 @@ typedef struct s_fdf
 	int		zoom_scale;
 	int		offset_x;
 	int		offset_y;
-
 	int		line_x;
 	int		line_y;
 	int		line_x_next;
 	int		line_y_next;
-
+	double	r_deg;
 	int		z_height;
 }	t_fdf;
 
