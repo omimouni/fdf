@@ -6,7 +6,7 @@
 #    By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 18:27:52 by omimouni          #+#    #+#              #
-#    Updated: 2021/10/02 23:48:53 by omimouni         ###   ########.fr        #
+#    Updated: 2021/10/03 12:55:27 by omimouni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,10 +26,12 @@ ifeq ($(OS),Darwin)
 LIB_FLAGS = -lm -lmlx -framework OpenGL -framework AppKit
 endif
 
+FLAGS = -Wall -Werror -Wextra -fsanitize=leak
+
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-	gcc $(OBJS) $(LIBFT) $(LIB_FLAGS) -g -fsanitize=address -o $(NAME)
+	gcc $(OBJS) $(LIBFT) $(LIB_FLAGS) $(FLAGS) -o $(NAME)
 
 clean: 
 	rm -rf $(OBJS)
@@ -47,4 +49,4 @@ $(LIBFT):
 	
 build/%.o: src/%.c
 	mkdir -p $(dir $@)
-	gcc $< -I./include -fsanitize=address -g -c -o $@
+	gcc $< -I./include $(FLAGS) -c -o $@

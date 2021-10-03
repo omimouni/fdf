@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 18:38:58 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 12:26:26 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 12:55:12 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static int
 			break ;
 		}
 		tmp++;
+		free(line);
 		if (r == 0)
 			break ;
 	}
@@ -59,7 +60,6 @@ static void
 {
 	int		x;
 	int		y;
-	int		r;
 	char	*line;
 	char	**s;
 
@@ -68,7 +68,7 @@ static void
 	fdf->map_z = malloc(sizeof(int **) * fdf->map_h);
 	while (y < fdf->map_h)
 	{
-		r = ft_gnl(*fd, &line);
+		ft_gnl(*fd, &line);
 		s = ft_split(line, ' ');
 		fdf->map_z[y] = malloc(sizeof(int *) * fdf->map_w);
 		free(line);

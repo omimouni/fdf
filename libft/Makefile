@@ -6,7 +6,7 @@
 #    By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/29 17:58:07 by omimouni          #+#    #+#              #
-#    Updated: 2021/10/01 12:22:17 by omimouni         ###   ########.fr        #
+#    Updated: 2021/10/03 12:40:42 by omimouni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ OBJDIR = ../build
 
 SRCS = $(wildcard src/*.c src/**/*.c)
 OBJS = $(patsubst src/%.c,$(OBJDIR)/libft/%.o,$(SRCS))
+
+FLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
@@ -34,4 +36,4 @@ re: fclean all
 	
 $(OBJDIR)/libft/%.o: src/%.c
 	mkdir -p $(dir $@)
-	gcc $< -I$(INCDIR) -c -o $@
+	gcc $<  -I$(INCDIR) $(FLAGS) -fsanitize=leak -c -o $@

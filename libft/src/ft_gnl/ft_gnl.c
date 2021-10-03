@@ -6,12 +6,11 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 18:08:44 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/02 19:13:11 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 12:32:49 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 int	ft_read_buffer(int fd, char **ptr)
 {
@@ -19,10 +18,12 @@ int	ft_read_buffer(int fd, char **ptr)
 	char	*tmp;
 	int		n;
 
-	if (!(buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1))))
-		return (-1);
-	while ((n = read(fd, buffer, BUFFER_SIZE)) > 0)
+	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	while (1)
 	{
+		n = read(fd, buffer, BUFFER_SIZE);
+		if (n <= 0)
+			break ;
 		buffer[n] = '\0';
 		if (*ptr == NULL)
 			*ptr = ft_strdup(buffer);
@@ -81,4 +82,3 @@ int	ft_gnl(int fd, char **line)
 		len++;
 	return (ft_set_line(&ptr[fd], len, line));
 }
-

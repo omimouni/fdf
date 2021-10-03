@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 12:28:10 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 12:48:42 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,24 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include "libft.h"
+
+# ifndef __LINUX__
+#  define F_KEY_UP 65362
+#  define F_KEY_DOWN 65364
+#  define F_KEY_LEFT 65361
+#  define F_KEY_RIGHT 65363
+#  define F_KEY_W 119
+#  define F_KEY_S 115
+#  define F_KEY_ESC 65307
+# else
+#  define F_KEY_UP 126
+#  define F_KEY_DOWN 125
+#  define F_KEY_LEFT 123
+#  define F_KEY_RIGHT 124
+#  define F_KEY_W 13
+#  define F_KEY_S 1
+#  define F_KEY_ESC 65307
+#endif
 
 typedef struct s_point
 {

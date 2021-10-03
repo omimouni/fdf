@@ -6,31 +6,11 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 08:52:28 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 12:06:32 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 12:55:38 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-#ifndef __LINUX__
-
-# define F_KEY_UP 65362
-# define F_KEY_DOWN 65364
-# define F_KEY_LEFT 65361
-# define F_KEY_RIGHT 65363
-# define F_KEY_W 119
-# define F_KEY_S 115
-
-#else
-
-# define F_KEY_UP 126
-# define F_KEY_DOWN 125
-# define F_KEY_LEFT 123
-# define F_KEY_RIGHT 124
-# define F_KEY_W 13
-# define F_KEY_S 1
-
-#endif
 
 static void
 	f_render_new_frame(t_fdf *fdf)
@@ -39,6 +19,20 @@ static void
 	f_image_clear(fdf);
 	f_render(fdf);
 	mlx_put_image_to_window(fdf->mlx, fdf->win, fdf->img, 0, 0);
+}
+
+static void
+	f_exit(t_fdf *fdf)
+{
+	int	i;
+
+	mlx_destroy_image(fdf->mlx, fdf->img);
+	mlx_destroy_window(fdf->mlx, fdf->win);
+	i = 0;
+	while (i < fdf->map_h)
+		free(fdf->map_z[i++]);
+	free(fdf->map_z);
+	exit(0);
 }
 
 int
@@ -56,5 +50,8 @@ int
 		fdf->offset_x += 10;
 	if (key == F_KEY_RIGHT)
 		fdf->offset_x -= 10;
+	if (key == F_KEY_ESC)
+		f_exit(fdf);
 	f_render_new_frame(fdf);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:22:46 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 12:29:18 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 12:44:17 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,6 @@ void
 void
 	f_draw_line(int *p, t_fdf *fdf)
 {	
-	int	swap;
-
 	if (abs(p[3] - p[1]) < abs(p[2] - p[0]))
 	{
 		if (p[0] > p[2])
