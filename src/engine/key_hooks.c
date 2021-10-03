@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 08:52:28 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 12:55:38 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 18:09:59 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ int
 	if (key == F_KEY_S)
 		fdf->zoom_scale -= 4;
 	if (key == F_KEY_UP)
-		fdf->offset_y += 10;
+		fdf->offset_y += 10 * fdf->zoom_scale;
 	if (key == F_KEY_DOWN)
-		fdf->offset_y -= 10;
+		fdf->offset_y -= 10 * fdf->zoom_scale;
 	if (key == F_KEY_LEFT)
-		fdf->offset_x += 10;
+		fdf->offset_x += 10 * fdf->zoom_scale;
 	if (key == F_KEY_RIGHT)
-		fdf->offset_x -= 10;
+		fdf->offset_x -= 10 * fdf->zoom_scale;
 	if (key == F_KEY_ESC)
 		f_exit(fdf);
 	f_render_new_frame(fdf);

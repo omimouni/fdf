@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 12:27:09 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 17:51:48 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 18:04:47 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ void
 		color = p[7];
 	else
 		color = p[6];
+	if (p[6] == -1 && p[7] == -1)
+		color = 0xffffff;
 	f_put_pixel(x, y, color, fdf);
 }

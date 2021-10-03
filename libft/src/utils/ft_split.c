@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 08:41:43 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 12:54:54 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 18:40:59 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,12 @@ void
 	int	i;
 
 	i = 0;
-	while (i < n)
-		free(tab[i++]);
-	free(tab);
+	if (tab)
+	{
+		while (i < n)
+			free(tab[i++]);
+		free(tab);
+	}
 	tab = NULL;
 }
 
