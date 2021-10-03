@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 13:02:50 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 13:20:19 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ typedef struct s_fdf
 	int		map_h;
 	int		map_w;
 	int		**map_z;
+	int		**map_color;
 	int		zoom_scale;
 	int		offset_x;
 	int		offset_y;
@@ -73,6 +74,9 @@ typedef struct s_fdf
 	int		line_y_next;
 	double	r_deg;
 	int		z_height;
+
+	int		raw_x;
+	int		raw_y;
 }	t_fdf;
 
 /**

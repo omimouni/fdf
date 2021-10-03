@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 19:24:15 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 13:02:45 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 13:20:42 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ void
 		x = 0;
 		while (x <= fdf->map_w - 1)
 		{
+			fdf->raw_x = x;
+			fdf->raw_y = y;
 			if (x < fdf->map_w - 1)
 				put_line_x(x, y, fdf);
 			if (y < fdf->map_h - 1)

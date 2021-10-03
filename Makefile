@@ -6,7 +6,7 @@
 #    By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 18:27:52 by omimouni          #+#    #+#              #
-#    Updated: 2021/10/03 12:55:27 by omimouni         ###   ########.fr        #
+#    Updated: 2021/10/03 13:07:49 by omimouni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ ifeq ($(OS),Darwin)
 LIB_FLAGS = -lm -lmlx -framework OpenGL -framework AppKit
 endif
 
-FLAGS = -Wall -Werror -Wextra -fsanitize=leak
+FLAGS = -fsanitize=leak
 
 all: $(NAME)
 

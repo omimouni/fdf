@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 12:27:09 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 12:29:31 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 13:50:51 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 void
 	f_color_print(int x, int y, int *p, t_fdf *fdf)
 {
-	if (p[5] || p[4])
-		f_put_pixel(x, y, 0xffff00, fdf);
+	int	color;
+
+	if (fdf->map_color[fdf->raw_y][fdf->raw_x] == -1)
+		color = 0xffffff;
 	else
-		f_put_pixel(x, y, 0xffffff, fdf);
+		color = fdf->map_color[fdf->raw_y][fdf->raw_x];
+	f_put_pixel(x, y, color, fdf);	
 }
