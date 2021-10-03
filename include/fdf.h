@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 08:27:13 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 08:56:11 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ void	init(t_fdf *fdf, char *file);
 
 void	f_draw_line(int x0, int y0, int x1, int y1, int z, t_fdf *fdf);
 void	f_render(t_fdf *fdf);
+int		f_key_hook(int key, t_fdf *fdf);
 
 #endif
