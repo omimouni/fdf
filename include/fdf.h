@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 14:01:07 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 14:02:29 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	f_mlx_image(t_fdf *fdf);
  */
 void	init(t_fdf *fdf, char *file);
 int		parse_hex(char *s);
-void	parse_map_z(int x, int y, char *s, t_fdf *fdf)
+void	parse_map_z(int x, int y, char *s, t_fdf *fdf);
 void	parse_map(t_fdf *fdf, char *file, int *fd);
 
 /**
