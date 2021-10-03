@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 13:59:44 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 18:48:40 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 20:55:09 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void
 	char	**d;
 
 	d = ft_split(s, ',');
+	i = 0;
 	if (d)
 	{
-		i = 0;
 		while (d[i])
 			i++;
 		fdf->map_z[y][x] = ft_atoi(d[0]);
