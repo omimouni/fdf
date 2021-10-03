@@ -6,11 +6,12 @@
 #    By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 18:27:52 by omimouni          #+#    #+#              #
-#    Updated: 2021/10/03 20:18:12 by omimouni         ###   ########.fr        #
+#    Updated: 2021/10/03 20:24:09 by omimouni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fdf
+NAME_BONUS = fdf_bonus
 
 SRCS =	src/fdf.c\
 				src/parser/init.c\
@@ -60,23 +61,25 @@ all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
 	gcc $(OBJS) $(LIBFT) $(LIB_FLAGS) $(FLAGS) -DIS_BONUS=0 -o $(NAME)
-
-files:
-	@echo $(OBJS)
 	
 clean: 
 	rm -rf $(OBJS)
+	rm -rf $(OBJS_BONUS)
 	make -sC ./libft clean
 
 fclean: clean
 	rm -rf build/
 	rm -rf $(NAME)
+	rm -rf $(NAME_BONUS)
 	make -sC ./libft fclean
 
 re: fclean all
 
-bonus: fclean $(OBJS_BONUS) $(LIBFT)
-	gcc $(OBJS_BONUS) $(LIBFT) $(LIB_FLAGS) $(FLAGS) -D IS_BONUS=1 -o $(NAME)
+bonus: $(NAME_BONUS)
+
+$(NAME_BONUS): $(OBJS_BONUS) $(LIBFT)
+	gcc $(OBJS_BONUS) $(LIBFT) $(LIB_FLAGS) $(FLAGS) -D IS_BONUS=1 -o $(NAME_BONUS)
+
 
 $(LIBFT):
 	make -sC ./libft
