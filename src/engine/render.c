@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 19:24:15 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 19:30:28 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 19:41:50 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void
 void
 	put_line_x(int x, int y, t_fdf *fdf)
 {
-	int	p[8];
+	int	p[9];
 
 	f_prj_iso_x(x, y, fdf);
 	p[0] = fdf->line_x + fdf->offset_x;
