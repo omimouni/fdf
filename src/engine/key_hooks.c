@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 08:52:28 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 19:28:05 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 20:07:15 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,21 @@ static void
 	exit(0);
 }
 
+void
+	f_scale_key(int key, t_fdf *fdf)
+{
+	if (key == F_KEY_W)
+		fdf->zoom_scale += 1;
+	if (key == F_KEY_S)
+		fdf->zoom_scale -= 1;
+	if (fdf->zoom_scale <= 0)
+		fdf->zoom_scale = 1;
+}
+
 int
 	f_key_hook(int key, t_fdf *fdf)
 {
-	if (key == F_KEY_W)
-		fdf->zoom_scale += 4;
-	if (key == F_KEY_S)
-		fdf->zoom_scale -= 4;
+	f_scale_key(key, fdf);
 	if (key == F_KEY_UP)
 		fdf->offset_y += 10 * fdf->zoom_scale;
 	if (key == F_KEY_DOWN)

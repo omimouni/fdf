@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 18:38:58 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 14:00:25 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 20:03:53 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ static int
 
 	tmp = 0;
 	*fd = open(file, O_RDONLY);
+	if (*fd < 0)
+	{
+		perror("Error: ");
+		exit(-1);
+	}
 	while (1)
 	{
 		r = ft_gnl(*fd, &line);

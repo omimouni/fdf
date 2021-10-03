@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 19:29:41 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 19:54:38 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 
 # include <math.h>
 # include <mlx.h>
-# include <stdio.h>
 # include <sys/types.h>
 # include <fcntl.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include "libft.h"
 
@@ -98,5 +98,6 @@ void	f_draw_line(int *p, t_fdf *fdf);
 void	f_render(t_fdf *fdf);
 int		f_key_hook(int key, t_fdf *fdf);
 void	f_color_print(int x, int y, int *p, t_fdf *fdf);
+void	f_responsive(t_fdf *fdf);
 
 #endif

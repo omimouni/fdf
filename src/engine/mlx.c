@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 08:13:44 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 11:29:14 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/03 19:55:34 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void
 void
 	f_mlx_init(t_fdf *fdf)
 {
-	fdf->win_w = 1000;
-	fdf->win_h = 1000;
+	// fdf->win_w = 1000;
+	// fdf->win_h = 1000;
 	fdf->mlx = mlx_init();
 	fdf->win = mlx_new_window(fdf->mlx, fdf->win_w,
 			fdf->win_h, F_WINDOW_TITLE);
