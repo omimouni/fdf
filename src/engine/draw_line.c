@@ -6,19 +6,25 @@
 /*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 23:22:46 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/04 17:33:44 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/04 17:52:05 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
 static void
+	f_calc_min(int *p, int *f)
+{
+	f[0] = p[2] - p[0];
+	f[1] = p[3] - p[1];
+}
+
+static void
 	f_draw_line_low(int *p, t_fdf *fdf)
 {
 	int	f[6];
 
-	f[0] = p[2] - p[0];
-	f[1] = p[3] - p[1];
+	f_calc_min(p, f);
 	f[2] = 1;
 	if (f[1] < 0)
 	{
@@ -48,8 +54,7 @@ static void
 {
 	int	f[6];
 
-	f[0] = p[2] - p[0];
-	f[1] = p[3] - p[1];
+	f_calc_min(p, f);
 	f[2] = 1;
 	if (f[0] < 0)
 	{
