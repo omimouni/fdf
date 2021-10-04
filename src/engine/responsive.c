@@ -16,7 +16,7 @@ void
 	f_responsive(t_fdf *fdf)
 {
 	if (fdf->map_w <= 50)
-		fdf->zoom_scale = 40;
+		fdf->zoom_scale = 70;
 	else if (fdf->map_w <= 200)
 		fdf->zoom_scale = 20;
 	else

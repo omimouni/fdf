@@ -11,16 +11,9 @@
 /* ************************************************************************** */
 
 #include "fdf.h"
+
 void
 	f_color_print(int x, int y, int *p, t_fdf *fdf)
 {
-	int	color;
-
-	if (p[6] == -1)
-		color = p[7];
-	else
-		color = p[6];
-	if (p[6] == -1 && p[7] == -1)
-		color = 0xffffff;
-	f_put_pixel(x, y, color, fdf);
+	f_put_pixel(x, y, p[10], fdf);
 }

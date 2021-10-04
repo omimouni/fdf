@@ -61,7 +61,7 @@ void
 void
 	put_line_x(int x, int y, t_fdf *fdf)
 {
-	int	p[9];
+	int	p[11];
 
 	f_prj_iso_x(x, y, fdf);
 	p[0] = fdf->line_x + fdf->offset_x;
@@ -72,13 +72,19 @@ void
 	p[5] = fdf->map_z[y][x + 1];
 	p[6] = fdf->map_color[y][x];
 	p[7] = fdf->map_color[y][x + 1];
+	p[8] = fdf->line_x + fdf->offset_x;
+	p[9] = fdf->line_x_next + fdf->offset_x;
+		if (p[6] == -1)
+		p[6] = 0xffffff;
+	if (p[7] == -1)
+		p[7] = 0xffffff;
 	f_draw_line(p, fdf);
 }
 
 void
 	put_line_y(int x, int y, t_fdf *fdf)
 {
-	int	p[8];
+	int	p[11];
 
 	f_prj_iso_y(x, y, fdf);
 	p[0] = fdf->line_x + fdf->offset_x;
@@ -89,7 +95,12 @@ void
 	p[5] = fdf->map_z[y + 1][x];
 	p[6] = fdf->map_color[y][x];
 	p[7] = fdf->map_color[y + 1][x];
-
+	p[8] = fdf->line_y + fdf->offset_y;
+	p[9] = fdf->line_y_next + fdf->offset_y;
+	if (p[6] == -1)
+		p[6] = 0xffffff;
+	if (p[7] == -1)
+		p[7] = 0xffffff;
 	f_draw_line(p, fdf);
 }
 
