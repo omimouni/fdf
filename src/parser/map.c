@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 13:59:44 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/04 12:51:00 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/04 12:57:11 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int
 		hex += (int)powf(16, 6 - i) * (n - nchar);
 		i--;
 	}
+	free(color);
 	return (hex);
 }
 

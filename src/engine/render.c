@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 19:24:15 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 19:41:50 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/04 12:56:09 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void
 	p[5] = fdf->map_z[y + 1][x];
 	p[6] = fdf->map_color[y][x];
 	p[7] = fdf->map_color[y + 1][x];
+
 	f_draw_line(p, fdf);
 }
 
