@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 18:38:58 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/04 11:35:07 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/04 18:16:34 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,34 @@ static int
 	return (tmp);
 }
 
+static void
+	f_check_error(int *fd, int size, t_fdf *fdf)
+{
+	int	err;
+	int	r;
+	char *line;
+	char **tab;
+
+	err = 0;
+	while (1)
+	{
+		r = ft_gnl(*fd, &line);
+		tab = ft_split(line, ' ');
+
+		printf("%s \n", line);
+		// free(line);
+		
+		// ft_split_free(tab, )
+	}
+	if (err != 0)
+	{
+		perror("The map is invalid");
+		exit(-1);
+	}
+}
+
 static int
-	calc_width(char *file, int *fd)
+	calc_width(char *file, int *fd, t_fdf *fdf)
 {
 	char	*line;
 	char	**s;
@@ -57,6 +83,7 @@ static int
 	while (s[++i])
 		;
 	ft_split_free(s, i);
+	f_check_error(fd, i, fdf);
 	return (i);
 }
 
@@ -68,7 +95,7 @@ void
 	int	fd3;
 
 	fdf->map_h = calc_height(file, &fd1);
-	fdf->map_w = calc_width(file, &fd2);
+	fdf->map_w = calc_width(file, &fd2, fdf);
 	parse_map(fdf, file, &fd3);
 	close(fd1);
 	close(fd2);

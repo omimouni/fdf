@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 11:33:19 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/04 11:33:21 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/04 17:57:51 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,10 @@ int	ft_gnl(int fd, char **line)
 		return (-1);
 	n = ft_read_buffer(fd, &ptr[fd]);
 	if (n < 0)
-		return (-1);
+	{
+		perror("Error: ");
+		exit(-1);
+	}
 	*line = ft_strdup("");
 	if (n == 0 && (ptr[fd] == NULL))
 		return (0);

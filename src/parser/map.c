@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 13:59:44 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/04 12:57:11 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/04 18:06:27 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,14 @@ void
 }
 
 void
+	f_parse_init_fd(int *fd, char *file, t_fdf *fdf)
+{
+	*fd = open(file, O_RDONLY);
+	fdf->map_z = malloc(sizeof(int **) * fdf->map_h);
+	fdf->map_color = malloc(sizeof(int **) * fdf->map_h);
+}
+
+void
 	parse_map(t_fdf *fdf, char *file, int *fd)
 {
 	int		x;
@@ -98,9 +106,7 @@ void
 	char	**s;
 
 	y = 0;
-	*fd = open(file, O_RDONLY);
-	fdf->map_z = malloc(sizeof(int **) * fdf->map_h);
-	fdf->map_color = malloc(sizeof(int **) * fdf->map_h);
+	f_parse_init_fd(fd, file, fdf);
 	while (y < fdf->map_h)
 	{
 		ft_gnl(*fd, &line);
@@ -109,7 +115,7 @@ void
 		fdf->map_color[y] = malloc(sizeof(int *) * fdf->map_w);
 		free(line);
 		x = 0;
-		while (x < fdf->map_w)
+		while (s[x])
 		{
 			parse_map_z(x, y, s[x], fdf);
 			x++;

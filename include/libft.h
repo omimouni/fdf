@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 18:08:30 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 20:19:19 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/04 17:57:11 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define BUFFER_SIZE 100
 
 # include <stdlib.h>
+# include <stdio.h>
 # include <unistd.h>
 
 int		ft_gnl(int fd, char **line);
