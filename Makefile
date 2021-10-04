@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+         #
+#    By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 18:27:52 by omimouni          #+#    #+#              #
-#    Updated: 2021/10/03 20:24:09 by omimouni         ###   ########.fr        #
+#    Updated: 2021/10/04 11:31:27 by omimouni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ FLAGS = -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-	gcc $(OBJS) $(LIBFT) $(LIB_FLAGS) $(FLAGS) -DIS_BONUS=0 -o $(NAME)
+	gcc $(OBJS) $(LIBFT) $(LIB_FLAGS) $(FLAGS) -DIS_BONUS=1 -o $(NAME)
 	
 clean: 
 	rm -rf $(OBJS)
@@ -86,7 +86,7 @@ $(LIBFT):
 	
 build/%.o: src/%.c
 	mkdir -p $(dir $@)
-	gcc $< -I./include $(FLAGS) -DIS_BONUS=0 -c -o $@
+	gcc $< -I./include $(FLAGS) -DIS_BONUS=1 -c -o $@
 
 	
 build/bonus/%.o: src/%.c

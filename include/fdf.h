@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 21:01:48 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/04 11:33:08 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,14 @@
 # include <stdlib.h>
 # include "libft.h"
 
-#  define F_KEY_UP 126
-#  define F_KEY_DOWN 125
-#  define F_KEY_LEFT 123
-#  define F_KEY_RIGHT 124
-#  define F_KEY_W 13
-#  define F_KEY_S 1
-#  define F_KEY_ESC 53
-#  define F_KEY_C 8
-
+# define F_KEY_UP 126
+# define F_KEY_DOWN 125
+# define F_KEY_LEFT 123
+# define F_KEY_RIGHT 124
+# define F_KEY_W 13
+# define F_KEY_S 1
+# define F_KEY_ESC 53
+# define F_KEY_C 8
 
 enum			e_camera {ISO, PARALLEL};
 
