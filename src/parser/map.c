@@ -6,11 +6,35 @@
 /*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 13:59:44 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 20:55:09 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/04 12:51:00 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+char
+	*create_color(char *s)
+{
+	char	*tmp;
+	int		len;
+	int		i;
+	int		j;
+
+	len = ft_strlen(s);
+	tmp = malloc(sizeof(char) * 7);
+	i = 0;
+	while (i < 6)
+		tmp[i++] = '0';
+	i = 6 - len;
+	j = 0;
+	while (i < 6)
+	{
+		tmp[i] = s[j];
+		j++;
+		i++;
+	}
+	return (tmp);
+}
 
 int
 	parse_hex(char *s)
@@ -19,13 +43,15 @@ int
 	int		i;
 	char	n;
 	int		nchar;
+	char	*color;
 
 	hex = 0;
-	i = ft_strlen(s);
+	color = create_color(s);
+	i = ft_strlen(color);
 	while (i > 0)
 	{
 		nchar = '0';
-		n = s[i - 1];
+		n = color[i - 1];
 		if (n >= 'A' && n <= 'F')
 			nchar = 'A' - 10;
 		if (n >= 'a' && n <= 'f')
@@ -41,6 +67,7 @@ void
 {
 	int		i;
 	char	**d;
+	int		num;
 
 	d = ft_split(s, ',');
 	i = 0;
@@ -48,7 +75,10 @@ void
 	{
 		while (d[i])
 			i++;
-		fdf->map_z[y][x] = ft_atoi(d[0]);
+		num = ft_atoi(d[0]);
+		if (num > fdf->max_z)
+			fdf->max_z = num;
+		fdf->map_z[y][x] = num;
 		fdf->map_color[y][x] = -1;
 		if (i == 2)
 		{

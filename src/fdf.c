@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omimouni <omimouni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:02 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/03 19:53:22 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/04 12:51:10 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int
 	if (argc == 2)
 	{
 		fdf = malloc(sizeof(t_fdf));
+		fdf->max_z = 0;
 		init(fdf, argv[1]);
 		fdf->camera = ISO;
 		f_responsive(fdf);

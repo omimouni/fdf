@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/04 11:33:08 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/04 11:38:13 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef struct s_fdf
 	int				z_height;
 	int				raw_x;
 	int				raw_y;
+	int				max_z;
 	enum e_camera	camera;
 }	t_fdf;
 
