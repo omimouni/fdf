@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 19:53:12 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/04 12:34:13 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/04 16:24:11 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void
 	f_responsive(t_fdf *fdf)
 {
 	if (fdf->map_w <= 50)
-		fdf->zoom_scale = 70;
+		fdf->zoom_scale = 200;
 	else if (fdf->map_w <= 200)
 		fdf->zoom_scale = 20;
 	else

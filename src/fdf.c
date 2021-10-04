@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:02 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/04 12:51:10 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/04 17:39:33 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,7 @@ int
 		mlx_loop(fdf->mlx);
 		free(fdf);
 	}
+	else
+		perror("provide valid arguments");
 	return (0);
 }

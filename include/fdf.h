@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 18:27:27 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/04 11:38:13 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/04 17:37:40 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,9 @@ void	f_render(t_fdf *fdf);
 int		f_key_hook(int key, t_fdf *fdf);
 void	f_color_print(int x, int y, int *p, t_fdf *fdf);
 void	f_responsive(t_fdf *fdf);
+int		gradient_color(int c1, int c2, double p);
+int		get_shade(int start, int end, double per);
+double	percentage(int start, int end, int current);
+void	f_color_print(int x, int y, int *p, t_fdf *fdf);
 
 #endif

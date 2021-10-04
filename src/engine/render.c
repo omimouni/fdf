@@ -6,7 +6,7 @@
 /*   By: omimouni <omimouni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/02 19:24:15 by omimouni          #+#    #+#             */
-/*   Updated: 2021/10/04 12:56:09 by omimouni         ###   ########.fr       */
+/*   Updated: 2021/10/04 17:35:20 by omimouni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void
 	p[7] = fdf->map_color[y][x + 1];
 	p[8] = fdf->line_x + fdf->offset_x;
 	p[9] = fdf->line_x_next + fdf->offset_x;
-		if (p[6] == -1)
+	if (p[6] == -1)
 		p[6] = 0xffffff;
 	if (p[7] == -1)
 		p[7] = 0xffffff;
